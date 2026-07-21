@@ -207,7 +207,7 @@ const gallery = [
   {
     id: 4,
     img: "/images/rupam-4.jpg",
-    title: "Temple Trip",
+    title: "College",
   },
   {
     id: 5,
@@ -401,7 +401,7 @@ const ABOUT_LOCATION = {
     },
     {
       id: 4,
-      name: "temple-trip.jpg",
+      name: "college.jpg",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
@@ -410,7 +410,7 @@ const ABOUT_LOCATION = {
     },
     {
       id: 5,
-      name: "mit-award.jpg",
+      name: "rupam5.jpg",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
