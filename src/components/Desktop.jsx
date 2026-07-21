@@ -6,6 +6,7 @@ import WindowWrapper from "./WindowWrapper.jsx";
 // Import Windows Content
 import Finder from "#windows/Finder.jsx";
 import Safari from "#windows/Safari.jsx";
+import Spotify from "#windows/Spotify.jsx";
 import Photos from "#windows/Photos.jsx";
 import Terminal from "#windows/Terminal.jsx";
 import Contact from "#windows/Contact.jsx";
@@ -97,27 +98,32 @@ const Desktop = () => {
       {/* RENDER ALL OS WINDOWS CONTAINER */}
       
       {/* Finder */}
-      <WindowWrapper id="finder" title="Finder" widthClass="w-3xl" heightClass="h-[450px]">
+      <WindowWrapper id="finder" title="Finder" widthClass="w-[780px]" heightClass="h-[460px]">
         <Finder />
       </WindowWrapper>
 
       {/* Safari */}
-      <WindowWrapper id="safari" title="Safari" widthClass="w-4xl" heightClass="h-[520px]">
+      <WindowWrapper id="safari" title="Safari" widthClass="w-[860px]" heightClass="h-[520px]">
         <Safari />
       </WindowWrapper>
 
+      {/* Spotify */}
+      <WindowWrapper id="spotify" title="Spotify" widthClass="w-[880px]" heightClass="h-[540px]">
+        <Spotify />
+      </WindowWrapper>
+
       {/* Photos */}
-      <WindowWrapper id="photos" title="Photos" widthClass="w-3xl" heightClass="h-[430px]">
+      <WindowWrapper id="photos" title="Photos" widthClass="w-[820px]" heightClass="h-[500px]">
         <Photos />
       </WindowWrapper>
 
       {/* Contact */}
-      <WindowWrapper id="contact" title="Contact" widthClass="w-2xl" heightClass="h-[420px]">
+      <WindowWrapper id="contact" title="Contact Me" widthClass="w-[740px]" heightClass="h-[480px]">
         <Contact />
       </WindowWrapper>
 
       {/* Terminal */}
-      <WindowWrapper id="terminal" title="Terminal" widthClass="w-xl" heightClass="h-[380px]">
+      <WindowWrapper id="terminal" title="Terminal" widthClass="w-[600px]" heightClass="h-[400px]">
         <Terminal />
       </WindowWrapper>
 

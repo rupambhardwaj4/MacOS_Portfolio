@@ -43,45 +43,48 @@ const Photos = () => {
             <div className="h-11 border-b border-white/10 bg-black/40 px-4 flex items-center justify-between flex-none">
               <button
                 onClick={() => setSelectedPhoto(null)}
-                className="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md"
+                className="text-xs font-semibold text-white/80 hover:text-white flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-md cursor-pointer"
               >
                 <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                 </svg>
                 Back
               </button>
-              <span className="text-xs font-medium text-white/60">Preview</span>
+              <span className="text-xs font-medium text-white/80">{selectedPhoto.title || "Photo Preview"}</span>
               <div className="w-16"></div>
             </div>
 
             {/* Large Image Container */}
-            <div className="flex-1 flex-center p-6 relative">
+            <div className="flex-1 flex items-center justify-center p-6 relative">
               <img
                 src={selectedPhoto.img}
-                alt="Expanded Preview"
+                alt={selectedPhoto.title || "Expanded Preview"}
                 className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-2xl"
               />
             </div>
           </div>
         ) : (
-          /* Masonry Grid Mode */
-          <div className="gallery p-5">
-            <ul className="grid grid-cols-5 grid-rows-5 gap-2.5 h-[340px] max-w-full">
+          /* Photo Grid Mode */
+          <div className="gallery p-5 overflow-y-auto h-full">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {gallery.map((photo) => (
-                <li
+                <div
                   key={photo.id}
                   onClick={() => setSelectedPhoto(photo)}
-                  className="cursor-pointer group overflow-hidden rounded-lg hover:ring-2 hover:ring-[#007aff] transition-all duration-200 bg-gray-50"
+                  className="cursor-pointer group relative aspect-square overflow-hidden rounded-xl bg-gray-100 border border-gray-200/60 hover:shadow-lg hover:ring-2 hover:ring-[#007aff] transition-all duration-200"
                 >
                   <img
                     src={photo.img}
-                    alt={`Gallery ${photo.id}`}
+                    alt={photo.title || `Gallery ${photo.id}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     draggable="false"
                   />
-                </li>
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-2 text-white text-[11px] font-medium opacity-90 group-hover:opacity-100 transition-opacity duration-200 truncate">
+                    {photo.title || `Photo ${photo.id}`}
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         )}
       </div>

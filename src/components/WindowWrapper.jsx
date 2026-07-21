@@ -54,7 +54,7 @@ const WindowWrapper = ({ id, title, children, widthClass = "w-2xl", heightClass 
   const isFocused = focusedWindow === id;
 
   const maximizedStyles = "fixed! top-[36px]! left-0! right-0! bottom-0! w-full! h-[calc(100vh-36px)]! rounded-none! transform-none! max-w-full!";
-  const normalStyles = `${widthClass} ${heightClass}`;
+  const normalStyles = `top-1/2 left-1/2 max-w-[92vw] max-h-[85vh] ${widthClass} ${heightClass}`;
 
   return (
     <div
@@ -62,7 +62,9 @@ const WindowWrapper = ({ id, title, children, widthClass = "w-2xl", heightClass 
       id={containerId || id}
       onMouseDown={() => focusWindow(id)}
       style={{
-        transform: windowState.isMaximized ? "none" : `translate(${position.x}px, ${position.y}px)`,
+        transform: windowState.isMaximized
+          ? "none"
+          : `translate(calc(-50% + ${position.x}px), calc(-50% + ${position.y}px))`,
         zIndex: windowState.zIndex,
         display: windowState.isMinimized ? "none" : "flex",
       }}
@@ -75,10 +77,10 @@ const WindowWrapper = ({ id, title, children, widthClass = "w-2xl", heightClass 
         id="window-header"
         onMouseDown={handleMouseDown}
         onDoubleClick={handleHeaderDoubleClick}
-        className="flex items-center justify-between px-4 py-2.5 bg-[#f6f6f6] border-b border-[#e5e5e5] select-none text-sm text-gray-700 font-medium cursor-default"
+        className="flex items-center justify-between px-4 py-2.5 bg-[#f6f6f6] border-b border-[#e5e5e5] select-none text-sm text-gray-700 font-medium cursor-default flex-none"
       >
         {/* Controls */}
-        <div id="window-controls" className="flex gap-2 w-1/4">
+        <div id="window-controls" className="flex items-center gap-2 w-1/4">
           <button
             onClick={() => closeWindow(id)}
             className="close window-control-btn flex items-center justify-center relative group"
@@ -112,7 +114,7 @@ const WindowWrapper = ({ id, title, children, widthClass = "w-2xl", heightClass 
       </div>
 
       {/* Content Area */}
-      <div className="flex-1 overflow-auto bg-white flex flex-col">
+      <div className="flex-1 overflow-auto bg-white flex flex-col min-h-0">
         {children}
       </div>
     </div>

@@ -39,6 +39,20 @@ const TxtViewer = () => {
           </h3>
         )}
 
+        {fileData.image && (
+          <div className="mb-4 flex items-center gap-4 bg-gray-50 p-3 rounded-xl border border-gray-100">
+            <img
+              src={fileData.image}
+              alt="Rupam Bhardwaj"
+              className="w-16 h-16 object-cover rounded-full shadow-sm border-2 border-white"
+            />
+            <div>
+              <p className="font-semibold text-gray-900 text-xs">Rupam Bhardwaj</p>
+              <p className="text-[11px] text-gray-500">Creative Developer & CS Student</p>
+            </div>
+          </div>
+        )}
+
         {Array.isArray(fileData.description) ? (
           fileData.description.map((para, i) => (
             <p key={i} className="mb-4">

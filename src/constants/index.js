@@ -49,6 +49,12 @@ const dockApps = [
     canOpen: true,
   },
   {
+    id: "spotify",
+    name: "Spotify",
+    icon: "spotify.png",
+    canOpen: true,
+  },
+  {
     id: "photos",
     name: "Gallery", // was "Photos"
     icon: "photos.png",
@@ -185,19 +191,28 @@ const photosLinks = [
 const gallery = [
   {
     id: 1,
-    img: "/images/gal1.png",
+    img: "/images/rupam-1.jpg",
+    title: "Self Portrait",
   },
   {
     id: 2,
-    img: "/images/gal2.png",
+    img: "/images/rupam-2.jpg",
+    title: "Event with Friend",
   },
   {
     id: 3,
-    img: "/images/gal3.png",
+    img: "/images/rupam-3.jpg",
+    title: "Family & Friends Outing",
   },
   {
     id: 4,
-    img: "/images/gal4.png",
+    img: "/images/rupam-4.jpg",
+    title: "Temple Trip",
+  },
+  {
+    id: 5,
+    img: "/images/rupam-5.jpg",
+    title: "Achievement Ceremony at MIT",
   },
 ];
 
@@ -359,22 +374,58 @@ const ABOUT_LOCATION = {
   children: [
     {
       id: 1,
-      name: "rupam-profile.png",
+      name: "rupam-profile.jpg",
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/rupam-1.jpg",
+    },
+    {
+      id: 2,
+      name: "event-photo.jpg",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-36",
+      imageUrl: "/images/rupam-2.jpg",
+    },
+    {
+      id: 3,
+      name: "group-selfie.jpg",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-64",
+      imageUrl: "/images/rupam-3.jpg",
     },
     {
       id: 4,
+      name: "temple-trip.jpg",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-[370px]",
+      imageUrl: "/images/rupam-4.jpg",
+    },
+    {
+      id: 5,
+      name: "mit-award.jpg",
+      icon: "/images/image.png",
+      kind: "file",
+      fileType: "img",
+      position: "top-10 left-[480px]",
+      imageUrl: "/images/rupam-5.jpg",
+    },
+    {
+      id: 6,
       name: "about-me.txt",
       icon: "/images/txt.png",
       kind: "file",
       fileType: "txt",
-      position: "top-60 left-5",
+      position: "top-44 left-5",
       subtitle: "Rupam Bhardwaj - Creative Developer",
-      image: "/images/adrian.jpg",
+      image: "/images/rupam-1.jpg",
       description: [
         "I'm an aspiring Creative Developer with a passion for web and mobile development, UI animations, and AI integration.",
         "I enjoy transforming ideas into interactive, user-friendly, and visually engaging applications.",
@@ -451,6 +502,7 @@ const WINDOW_CONFIG = {
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  spotify: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
